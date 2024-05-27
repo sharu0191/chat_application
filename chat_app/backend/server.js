@@ -7,8 +7,10 @@ const authRoutes = require('./routes/authRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
 const { protect } = require('./middleware/authMiddleware');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 const server = http.createServer(app);
 const io = socketio(server);
 
